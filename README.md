@@ -17,4 +17,4 @@ GS Shop
 
 ## AOS :: JS Libaray 
 - https://michalsnik.github.io/aos/
-  ㄴ 스크롤 특수 효과 모음
+  <br>ㄴ 스크롤 특수 효과 모음
