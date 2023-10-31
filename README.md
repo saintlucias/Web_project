@@ -23,7 +23,8 @@ GS Shop
 
 ## Use an
 - React (Node js) <br>
-![OYIaJ1KK_400x400](https://github.com/saintlucias/Web_project/assets/125417038/0830fd36-8f24-4dcc-b78a-c333149ff0a0)
+![다운로드](https://github.com/saintlucias/Web_project/assets/125417038/4648816d-b270-437e-accb-7f308b669ad1)
+
 
 
 - Mysql <br>
