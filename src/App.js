@@ -1,11 +1,17 @@
+// Library area
 import React from 'react';
+
+// Component area
+import Main_page from './pages/Main_page';
 
 import './App.css';
 
 export default function App() {
   return (
     <div >
-        <h2>Test</h2>
+        <div>
+          <Main_page />
+        </div>
     </div>
   );
 }
