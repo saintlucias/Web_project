@@ -1,4 +1,5 @@
-http://bluecapsule.co.kr/home/layouts/home/shop/images/bluecapsule_220516_1.jpg
+
+![bluecapsule_220516_1](https://github.com/saintlucias/Web_project/assets/125417038/a4a2ce52-3208-4676-b4f6-7fe533b80329)
 
 # Web_project
 ( 일단은 홈쇼핑 웹페이지 제작 )
