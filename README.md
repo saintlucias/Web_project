@@ -23,7 +23,8 @@ GS Shop
 
 ## Use an
 - React (Node js) <br>
-![다운로드](https://github.com/saintlucias/Web_project/assets/125417038/4648816d-b270-437e-accb-7f308b669ad1)
+![다운로드](https://github.com/saintlucias/Web_project/assets/125417038/032052df-116c-4687-8ac2-768fdbb5b3d9)
+
 
 
 
