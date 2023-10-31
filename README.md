@@ -31,6 +31,7 @@ GS Shop
 
 
 - Python <br>
-![Python-logo-notext svg](https://github.com/saintlucias/Web_project/assets/125417038/4273ce6f-fbb5-4834-aabd-10def124b257)
+![Python-logo-notext svg](https://github.com/saintlucias/Web_project/assets/125417038/19492758-1d62-4184-b99e-a216e7f864a3)
+
 
 - ( ... )
