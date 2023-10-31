@@ -15,20 +15,22 @@ GS Shop
 스타일 닷컴
 - https://www.sta1.com/shops?gndr=M&shopType=S&pg=1
 
-## AOS :: JS Libaray 
+## AOS :: JS Libaray <br>
 ![제목 없음](https://github.com/saintlucias/Web_project/assets/125417038/87e4b04e-cc1e-444d-ade9-801c1ff17883)
 
 - https://michalsnik.github.io/aos/
   <br>ㄴ 스크롤 특수 효과 모음
 
 ## Use an
-- React (Node js)
-  ![OYIaJ1KK_400x400](https://github.com/saintlucias/Web_project/assets/125417038/0d301f1f-39bb-47e7-9769-130cb005e418)
+- React (Node js) <br>
+![OYIaJ1KK_400x400](https://github.com/saintlucias/Web_project/assets/125417038/0830fd36-8f24-4dcc-b78a-c333149ff0a0)
 
-- Mysql
-  ![1024px-MySQL ff87215b43fd7292af172e2a5d9b844217262571](https://github.com/saintlucias/Web_project/assets/125417038/7bf45ea4-f001-4c84-971d-66edc4f21b06)
 
-- Python
-  ![Python-logo-notext svg](https://github.com/saintlucias/Web_project/assets/125417038/03a39233-1f33-41ad-9243-aa0078c444fe)
+- Mysql <br>
+![1024px-MySQL ff87215b43fd7292af172e2a5d9b844217262571](https://github.com/saintlucias/Web_project/assets/125417038/5da4af60-ac6a-46e8-917e-6ed8fa9f3349)
+
+
+- Python <br>
+![Python-logo-notext svg](https://github.com/saintlucias/Web_project/assets/125417038/4273ce6f-fbb5-4834-aabd-10def124b257)
 
 - ( ... )
