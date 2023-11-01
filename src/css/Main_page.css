@@ -1,0 +1,7 @@
+.Main_page_container {
+
+}
+.Main_page_container > table {
+    text-align: center;
+    border: 1px solid black;
+}
