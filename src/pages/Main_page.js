@@ -10,7 +10,7 @@ export default function Main_page() {
 
 
     useEffect(() => {
-        axios.get("http://localhost:4000/api/status_load")
+        axios.get("http://localhost:4000/api/select_status")
             .then((res) => {
                 if (res.data.length > 0) {
                     setID(res.data[0].user_name); //database 컬럼명
@@ -38,7 +38,7 @@ export default function Main_page() {
         };
         console.log(data);
     
-        axios.post("http://localhost:4000/api/status_update", data)
+        axios.post("http://localhost:4000/api/update_status", data)
             .then(res => {
                 console.log("Data saved successfully:", res.data);
             })

@@ -5,7 +5,6 @@ const app     = express();
 const PORT    = 4000; // 포트번호 설정
 
 app.use(express.json()); // Parse JSON bodies
-app.use(express.urlencoded({ extended: true }));
 
 // MySQL 연결
 const db = mysql.createPool({
@@ -29,7 +28,7 @@ app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`);
 });
 
-app.get("/api/status_load", (req, res) => {
+app.get("/api/select_status", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     
     const sqlQuery = "SELECT * FROM STATUS";
@@ -50,17 +49,19 @@ app.get("/api/status_load", (req, res) => {
     });
 });
 
-app.post("/api/status_update", (req, res) => {
+app.post("/api/update_status", (req, res) => {
     const { STR, DEX, ID} = req.body;
     const sqlQuery = `UPDATE status SET STR=${STR}, DEX=${DEX} WHERE user_name='${ID}'`;
     console.log(req.body)
     db.query(sqlQuery, (err, result) => {
         if (err) {
             console.error("Database error: ", err);
-            // res.status(500).send("Data update failed.");
         } else {
-            console.log("Data updated successfully", result);
-            // res.send("Data updated successfully", result);
+            console.log("Data updated successfully", result);           
         }
     });
 });
+
+app.post("api/insert", (req, res) => {
+    const { }
+})
