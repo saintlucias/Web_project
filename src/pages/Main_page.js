@@ -7,7 +7,7 @@ export default function Main_page() {
     const [STR, setStr] = useState(0);
     const [DEX, setDex] = useState(0);
     const [ID, setID] = useState('');
-    const [fetchedData, setFetchedData] = useState(null);
+
 
     useEffect(() => {
         axios.get("http://localhost:4000/api/status_load")
@@ -32,10 +32,11 @@ export default function Main_page() {
 
     const handleSaveData = () => {
         const data = { 
-            STR: fetchedData ? fetchedData.STR : STR, 
-            DEX: fetchedData ? fetchedData.DEX : DEX,
-            user_name: ID
+            STR : STR, 
+            DEX : DEX,
+            ID : ID
         };
+        console.log(data);
     
         axios.post("http://localhost:4000/api/status_update", data)
             .then(res => {
@@ -59,12 +60,12 @@ export default function Main_page() {
             <table>
                 <tr>
                     <td>STR</td>
-                    <td>{fetchedData ? fetchedData.STR : STR}</td>
+                    <td>{STR}</td>
                     <button onClick={handleIncrementSTR}>+</button>
                 </tr>
                 <tr>
                     <td>DEX</td>
-                    <td>{fetchedData ? fetchedData.DEX : DEX}</td>
+                    <td>{DEX}</td>
                     <button onClick={handleIncrementDEX}>+</button>
                 </tr>
             </table>

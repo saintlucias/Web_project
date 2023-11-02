@@ -6,16 +6,9 @@ import Main_page from './pages/Main_page';
 
 import './App.css';
 
-import axios from 'axios';
-
 export default function App() {
 
-  useEffect(() => {
-    axios.get('/api/test')
-      .then(res => console.log(res))
-      .catch()
-  })
-
+  
   return (
     <div >
         <div>

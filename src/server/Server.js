@@ -4,6 +4,9 @@ const mysql   = require("mysql");   // npm i mysql | yarn add mysql
 const app     = express();
 const PORT    = 4000; // 포트번호 설정
 
+app.use(express.json()); // Parse JSON bodies
+app.use(express.urlencoded({ extended: true }));
+
 // MySQL 연결
 const db = mysql.createPool({
     host: "127.0.0.1", // 호스트
@@ -48,16 +51,16 @@ app.get("/api/status_load", (req, res) => {
 });
 
 app.post("/api/status_update", (req, res) => {
-    const { STR, DEX, ID } = req.body;
-    const sqlQuery = `UPDATE STATUS SET STR=${STR}, DEX=${DEX} WHERE user_name=${ID}`;
-
+    const { STR, DEX, ID} = req.body;
+    const sqlQuery = `UPDATE status SET STR=${STR}, DEX=${DEX} WHERE user_name='${ID}'`;
+    console.log(req.body)
     db.query(sqlQuery, (err, result) => {
         if (err) {
             console.error("Database error: ", err);
-            res.status(500).send("Data update failed.");
+            // res.status(500).send("Data update failed.");
         } else {
             console.log("Data updated successfully", result);
-            res.send("Data updated successfully", result);
+            // res.send("Data updated successfully", result);
         }
     });
 });
