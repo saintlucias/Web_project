@@ -38,7 +38,7 @@ export default function Main_page() {
         };
         console.log(data);
     
-        axios.post("http://localhost:4000/api/update_status", data)
+        axios.post("http://localhost:4000/api/status_update", data)
             .then(res => {
                 console.log("Data saved successfully:", res.data);
             })

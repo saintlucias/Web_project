@@ -30,10 +30,10 @@ app.listen(PORT, () => {
 
 app.get("/api/select_status", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    
-    const sqlQuery = "SELECT * FROM STATUS";
 
-    db.query(sqlQuery, (err, result) => {
+    const sqlQuery = "SELECT * FROM STATUS where user_name = 'admin'";
+
+    db.query(sqlQuery,(err, result) => {
         if (err) {
             console.error("Database error:", err); // Log the specific database error
             res.status(500).send("Database error occurred");
@@ -49,19 +49,20 @@ app.get("/api/select_status", (req, res) => {
     });
 });
 
-app.post("/api/update_status", (req, res) => {
-    const { STR, DEX, ID} = req.body;
-    const sqlQuery = `UPDATE status SET STR=${STR}, DEX=${DEX} WHERE user_name='${ID}'`;
-    console.log(req.body)
-    db.query(sqlQuery, (err, result) => {
-        if (err) {
-            console.error("Database error: ", err);
-        } else {
-            console.log("Data updated successfully", result);           
-        }
+app.post("/api/status_update", (req, res) => {
+    const { STR, DEX, ID } = req.body;
+  
+    // 파라미터화된 쿼리를 생성
+    const sqlQuery = "UPDATE status SET STR = ?, DEX = ? WHERE user_name = ?";
+  
+    // 값을 배열로 전달하여 쿼리를 실행
+    db.query(sqlQuery, [STR, DEX, ID], (err, result) => {
+      if (err) {
+        console.error("Database error:", err);
+        res.status(500).send("Data update failed.");
+      } else {
+        console.log("Data updated successfully:", result);
+        res.send("Data updated successfully");
+      }
     });
-});
-
-app.post("api/insert", (req, res) => {
-    const { }
-})
+  });
