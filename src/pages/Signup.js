@@ -16,7 +16,7 @@ export default function Signup() {
         axios.post(`http://localhost:4000/api/status_check?ID=${ID}`)
             .then(response => {
                 if (response.data.length > 0) {
-                    alert("Error: ID already exists.");
+                    alert("Error: 이미 ID가 존재합니다.");
                 } else {
                     // If the ID doesn't exist, proceed with the POST request
                     axios.post("http://localhost:4000/api/status_insert", data)

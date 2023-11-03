@@ -1,0 +1,24 @@
+.DeleteID_container > h3 {
+    margin-left : 85px;
+}
+.DeleteID_container > div> input{
+    border-radius: 5px;
+    margin-top:10px;
+    margin-left:10px;
+    padding:10px;
+    border:none;
+    width:200px;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
+}
+.DeleteID_container > button {
+    width:100px;
+    border-radius: 5px;
+    margin-top:20px;
+    margin-left:70px;
+    border:none;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
+}
+.DeleteID_container > button:active {
+    color:white;
+    background-color: rgba(8, 8, 8, 0.8);
+}

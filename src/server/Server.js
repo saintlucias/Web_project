@@ -92,10 +92,27 @@ app.post("/api/status_insert", (req, res) => {
     db.query(sqlQuery, [ID, STR, DEX], (err, result) => {
         if (err) {
             console.error("Database error:", err);
-            res.status(500).send("Data insert failed.");
         } else {
             console.log("Data insert successfully: ", result);
-            res.send("Data updated successfully");
         }
     });
-})
+});
+
+app.post("/api/status_delete", (req, res) => {
+    const { ID } = req.body;
+
+    const sqlQuery = "DELETE FROM status WHERE user_name = ?";
+
+    db.query(sqlQuery, [ID], (err, result) => {
+        if (err) { 
+            console.error("Database error:", err);
+            res.status(500).send("Database error occurred");
+        } else {
+            if (result.affectedRows === 0) {
+                console.error("Error: ID does not exist.");
+            } else {
+                console.log("Data delete successfully: ", result);
+            }
+        }
+    });
+});
