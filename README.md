@@ -37,3 +37,9 @@ GS Shop
 
 
 - ( ... )
+
+
+## 주요 기능
+
+- Database - insert, select, update, delete , (...)
+- 이미지 업로드, 게시물 등록, 이미지 특수효과 등 
