@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
 import '../css/Main_page.css';
 
 export default function Main_page() {
@@ -31,13 +32,13 @@ export default function Main_page() {
     };
 
     const handleSaveData = () => {
-        const data = { 
-            STR : STR, 
-            DEX : DEX,
-            ID : ID
+        const data = {
+            STR: STR,
+            DEX: DEX,
+            ID: ID
         };
-        console.log(data);
-    
+
+
         axios.post("http://localhost:4000/api/status_update", data)
             .then(res => {
                 console.log("Data saved successfully:", res.data);
@@ -45,31 +46,34 @@ export default function Main_page() {
             .catch(err => {
                 console.error("Error: ", err.message);
             });
-    }; 
+    };
+
 
     return (
         <div className="Main_page_container">
-            <h2>This is Main_page Component.</h2>
+            <h2>Update / Select</h2>
             <div>
-                {ID && (
-                    <div>
-                        ID : {ID}
-                    </div>
-                )}
+                <div>
+                    {ID && (
+                        <div>
+                            ID : {ID}
+                        </div>
+                    )}
+                </div>
+                <table>
+                    <tr>
+                        <td>STR</td>
+                        <td>{STR}</td>
+                        <td><button onClick={handleIncrementSTR}>+</button></td>
+                    </tr>
+                    <tr>
+                        <td>DEX</td>
+                        <td>{DEX}</td>
+                        <td><button onClick={handleIncrementDEX}>+</button></td>
+                    </tr>
+                </table>
+                <button onClick={handleSaveData}>Save　Data</button>
             </div>
-            <table>
-                <tr>
-                    <td>STR</td>
-                    <td>{STR}</td>
-                    <button onClick={handleIncrementSTR}>+</button>
-                </tr>
-                <tr>
-                    <td>DEX</td>
-                    <td>{DEX}</td>
-                    <button onClick={handleIncrementDEX}>+</button>
-                </tr>
-            </table>
-            <button onClick={handleSaveData}>Save Data</button>
         </div>
     );
 }

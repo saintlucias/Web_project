@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 
 // Component area
 import Main_page from './pages/Main_page';
+import Signup from './pages/Signup';
 
 import './App.css';
 
@@ -13,6 +14,9 @@ export default function App() {
     <div >
         <div>
           <Main_page />
+        </div>
+        <div>
+          <Signup/>
         </div>
     </div>
   );
