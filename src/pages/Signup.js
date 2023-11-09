@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import '../css/Signup.css';
+import styled from 'styled-components';
+
+
 
 export default function Signup() {
     const [ID, setID] = useState('');
@@ -38,15 +40,50 @@ const handleInputChange = (event) => {
 };
 
 return (
-    <div className="Signup_container">
+    <Div>
         <h3>회원 가입</h3>
         <div>
-            <input type="text" placeholder="ID 입력" onChange={handleInputChange} />
+            <Input type="text" placeholder="ID 입력" onChange={handleInputChange}/>
         </div>
         {/* <input type='password' placeholder="Password 입력" /> */}
         <div>
-            <button onClick={handleInsertData}>가입하기</button>
+            <Button onClick={handleInsertData} >가입하기</Button>
         </div>
-    </div>
+    </Div>
 );
 }
+
+const Div = styled.div `
+    display: grid;
+    text-align: center;
+`;
+
+const Input = styled.input `
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
+`;
+
+const Button = styled.button `
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+
+    &:hover {
+        font-weight: bold;
+        background-color: rgba(125, 125, 125, 0.2);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        color: white;
+        background-color: skyblue;
+    }
+`;
+

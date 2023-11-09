@@ -45,6 +45,7 @@
 - 이미지 업로드, 게시물 등록, 이미지 특수효과 등 
 
 ## 설치 라이브러리 
-npm install express (--force ) [node 서버 관련]
-npm install mysql 
-( ... )
+npm install express (--force ) [node 서버 관련] <br>
+npm install mysql <br>
+npm install styled-components [css-in-js]<br>
+( ... ) <br>

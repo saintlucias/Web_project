@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import styled from 'styled-components';
 
-import '../css/Main_page.css';
 
 export default function Main_page() {
     const [STR, setStr] = useState(0);
@@ -50,7 +50,7 @@ export default function Main_page() {
 
 
     return (
-        <div className="Main_page_container">
+        <Div>
             <h2>Update / Select</h2>
             <div>
                 <div>
@@ -60,7 +60,7 @@ export default function Main_page() {
                         </div>
                     )}
                 </div>
-                <table>
+                <Table>
                     <tr>
                         <td>STR</td>
                         <td>{STR}</td>
@@ -71,9 +71,42 @@ export default function Main_page() {
                         <td>{DEX}</td>
                         <td><button onClick={handleIncrementDEX}>+</button></td>
                     </tr>
-                </table>
-                <button onClick={handleSaveData}>Save　Data</button>
+                </Table>
+                <Button onClick={handleSaveData}>Save　Data</Button>
             </div>
-        </div>
+        </Div>
     );
 }
+
+const Div = styled.div `
+    text-align: center;
+`;
+
+const Table = styled.table `
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
+`;
+
+const Button = styled.button `
+    width: 100px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+
+    &:hover {
+        background-color: rgba(125, 125, 125, 0.25);
+        transform: scale(1.05);
+        font-weight:bold;
+    }
+
+    &:active {
+        color: white;
+        background-color: skyblue;
+    }
+`;

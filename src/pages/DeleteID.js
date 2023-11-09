@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import '../css/DeleteID.css';
+import styled from "styled-components";
+
 import axios from "axios";
 
 export default function DeleteID() {
@@ -32,13 +33,53 @@ export default function DeleteID() {
         setID(event.target.value);
     };
 
+
+
     return (
-        <div className="DeleteID_container">
+        <Div>
             <h3>ID 삭제</h3>
             <div>
-                <input type="text" placeholder="삭제할 ID 입력" onChange={handleDeleteChange} />
+                <Input type="text" placeholder="삭제할 ID 입력" onChange={handleDeleteChange} />
             </div>
-            <button onClick={handleDeleteData}>Delete</button>
-        </div>
+            <Button onClick={handleDeleteData} >Delete</Button>
+        </Div>
     );
 }
+
+const Div  = styled.div`
+    text-align: center;
+`;
+
+const Input = styled.input`
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
+`;
+
+const Button = styled.button`
+    width: 100px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: none;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
+    transition:0.2s;
+
+    &:hover {
+        background-color: rgba(125, 125, 125, 0.25);
+        transform: scale(1.05);
+        font-weight:bold;
+    }
+
+    &:active {
+        color: white;
+        background-color: skyblue;
+    }
+`;
+
+const activeButtonStyle = {
+    color: 'white',
+    backgroundColor: 'rgba(8, 8, 8, 0.8)',
+};
