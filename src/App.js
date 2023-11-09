@@ -2,19 +2,20 @@
 import React, {useEffect} from 'react';
 
 // Component area
-import Main_page from './pages/Main_page';
+import SelectID from './pages/SelectID';
 import Signup from './pages/Signup';
 import DeleteID from './pages/DeleteID';
 
+import styled from 'styled-components';
 import './App.css';
 
 export default function App() {
 
   
   return (
-    <div >
+    <Body>
         <div>
-          <Main_page />
+          <SelectID />
         </div>
         <div>
           <Signup/>
@@ -22,8 +23,14 @@ export default function App() {
         <div>
           <DeleteID />
         </div>
-    </div>
+    </Body>
   );
 }
 
+const Body = styled.body `
+  padding-top: 10px;
+  width:100%;
+  height:100vw;
+  background-color: rgba(125, 125, 125, 0.125);
+`;
 

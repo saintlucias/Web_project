@@ -47,7 +47,7 @@ return (
         </div>
         {/* <input type='password' placeholder="Password 입력" /> */}
         <div>
-            <Button onClick={handleInsertData} >가입하기</Button>
+            <Button onClick={handleInsertData}><span>가입하기</span></Button>
         </div>
     </Div>
 );
@@ -67,23 +67,93 @@ const Input = styled.input `
     box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
 `;
 
-const Button = styled.button `
-    width: 100px;
-    border-radius: 5px;
-    border: none;
+const Button = styled.button`
     margin-top: 20px;
-    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
+    background: rgb(0, 172, 238);
+    background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    color: white;
+    outline: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: rgba(2, 126, 251, 1);
+        transition: all 0.3s ease;
+    }
+
+    &:before {
+        height: 0%;
+        width: 2px;
+    }
+
+    &:after {
+        width: 0%;
+        height: 2px;
+    }
 
     &:hover {
-        font-weight: bold;
-        background-color: rgba(125, 125, 125, 0.2);
-        transform: scale(1.05);
+        background: transparent;
+        box-shadow: none;
+        &:before {
+        height: 100%;
+        }
+
+        &:after {
+        width: 100%;
+        }
+
+        span {
+        color: rgba(2, 126, 251, 1);
+
+        &:before {
+            height: 100%;
+        }
+
+        &:after {
+            width: 100%;
+        }
+        }
     }
 
-    &:active {
-        color: white;
-        background-color: skyblue;
-    }
+    span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        &:before,
+        &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: rgba(2, 126, 251, 1);
+        transition: all 0.3s ease;
+        }
+
+        &:before {
+        width: 2px;
+        height: 0%;
+        }
+
+        &:after {
+        width: 0%;
+        height: 2px;
+        }
+  }
 `;
 
