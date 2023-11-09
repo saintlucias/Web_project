@@ -32,5 +32,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "![bluecapsule_220516_1](https://github.com/saintlucias/Web_project/assets/125417038/a4a2ce52-3208-4676-b4f6-7fe533b80329)",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
