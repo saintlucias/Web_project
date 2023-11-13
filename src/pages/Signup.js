@@ -54,7 +54,6 @@ return (
 }
 
 const Div = styled.div `
-    display: grid;
     text-align: center;
 `;
 
