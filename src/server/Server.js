@@ -104,7 +104,7 @@ app.post("/api/status_delete", (req, res) => {
     const sqlQuery = "DELETE FROM status WHERE user_name = ?";
 
     db.query(sqlQuery, [ID], (err, result) => {
-        if (err) { 
+        if (err) {
             console.error("Database error:", err);
             res.status(500).send("Database error occurred");
         } else {
@@ -117,3 +117,4 @@ app.post("/api/status_delete", (req, res) => {
     });
 });
 
+// g

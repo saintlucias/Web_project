@@ -25,5 +25,5 @@ yarn-error.log*
 # API KEYS
 .env
 
-# COMPONENT
-.Server.js
+# Ignore all files in the server directory
+web-project/src/server/*
