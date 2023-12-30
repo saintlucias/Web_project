@@ -1,46 +1,69 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![bluecapsule_220516_1](https://github.com/saintlucias/Web_project/assets/125417038/a4a2ce52-3208-4676-b4f6-7fe533b80329)
 
-## Available Scripts
+# Web_project
+( 홈쇼핑 웹페이지 제작 )
 
-In the project directory, you can run:
+## 참고할 웹 페이지 ::
 
-### `npm start`
+네이버 쇼핑 <br>
+- https://shopping.naver.com/home
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+네이버 스마트 스토어 <br>
+- https://sell.smartstore.naver.com/#/home/about
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+쿠팡 <br>
+- https://www.coupang.com/ 
 
-### `npm test`
+11번가 <br>
+- https://www.11st.co.kr/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## AOS :: JS Library <br>
+![제목 없음](https://github.com/saintlucias/Web_project/assets/125417038/87e4b04e-cc1e-444d-ade9-801c1ff17883)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- https://michalsnik.github.io/aos/
+  <br>ㄴ 스크롤 특수 효과 모음
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Use language
+- React (Node js) <br>
+![다운로드](https://github.com/saintlucias/Web_project/assets/125417038/032052df-116c-4687-8ac2-768fdbb5b3d9)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Mysql <br>
+![1024px-MySQL ff87215b43fd7292af172e2a5d9b844217262571](https://github.com/saintlucias/Web_project/assets/125417038/5da4af60-ac6a-46e8-917e-6ed8fa9f3349)
 
-### `npm run eject`
+- Python <br>
+![Python-logo-notext svg](https://github.com/saintlucias/Web_project/assets/125417038/19492758-1d62-4184-b99e-a216e7f864a3)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ( ... )
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 주요 기능
 
-## Learn More
+- Database - insert, select, update, delete , (...)
+- 이미지 업로드, 게시물 등록, 이미지 특수효과 등 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## 설치 라이브러리 
+
+npm i styled-component [ css 스타일 ]<br/>
+npm i crypto-js [ 암호화, 복호화 ]<br/>
+npm i express [ Node 서버 ] <br/>
+npm i mysql2 [ mysql 데이터베이스 ] <br/>
+npm i multer [ 이미지 파일 저장 경로 지정 - diskstorage ... ] <br/>
+npm i react-router-dom [ redirect ... ] <br/> 
+npm i ts-node [ nodejs 에서 타입스크립트 실행하기 위한 도구 ] <br/>
+npm i typescript <br/>
+npm i web-vitals <br/>
+npm i express (--force ) [node 서버 관련] <br>
+[ ... ]
+
+## 오류 
+- 이미지 로드 오류 [ 서버로부터 이미지는 전달 되지만 로컬 경로에서 이미지 받아오는게 안됨.] <br/>
+    ㄴ> 업로드된 이미지 폴더를 public 으로 이동 후 이미지 로드했더니 해결됨.
+
+- 함수를 모듈 폴더에 넣어서 import 하고 사용하려 했으나 오류 <br/>
+    ㄴ> tsconfig.json => "include" 에 모듈 폴더를 포함 시켜주어야 함. <br>
+    

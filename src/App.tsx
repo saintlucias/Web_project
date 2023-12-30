@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AnimatedBackground from "./style/AnimatedBackground";
+import styled from 'styled-components';
+import ShowImages from "./pages/ShowImages";
+import Tab from "./pages/Tab";
+import Chat from "./pages/Chat";
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Body>
+      <Tab />
+      <AnimatedBackground />
+      <DIV>
+        <ShowImages />
+        <CHATDIV>
+          <Chat />
+        </CHATDIV>
+      </DIV>
+    </Body>
   );
 }
 
 export default App;
+const Body = styled.div`
+  min-width:1000px;
+  background-color: rgba(125, 125, 125, 0.05);
+`;
+const DIV = styled.div`
+  display : flex;
+`;
+const CHATDIV = styled.div`
+  margin-top: 10px;
+  margin:auto;
+`;
