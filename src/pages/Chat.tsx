@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const Chat = () => {
@@ -6,6 +6,7 @@ const Chat = () => {
   const [currentMessage, setCurrentMessage] = useState<string>('');
   const [socket, setSocket] = useState<WebSocket | null>(null);
   const [userName, setuserName] = useState<string>('');
+  const ChatRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const newSocket = new WebSocket('ws://192.168.0.23:4002');
@@ -25,10 +26,13 @@ const Chat = () => {
 
     setSocket(newSocket);
 
+    ChatRef.current?.scrollTo(0, ChatRef.current.scrollHeight);
     return () => {
       newSocket.close();
     };
-  }, []);
+
+  }, [messages]); 
+
 
   const sendMessage = () => {
     if (socket && socket.readyState === WebSocket.OPEN) {
@@ -50,16 +54,24 @@ const Chat = () => {
   return (
     <div>
       <Header>블루캡슐 AI 팀 오늘의 점심 메뉴 결정</Header>
-      <ChatContainer>
+      <ChatContainer ref={ChatRef}>
         <MessageList>
           {messages.map((message, index) => (
-            <Message key={index}>
-              {message.startsWith('me :')
-                ? message.split('me :')[1]
-                : message.startsWith('other :')
-                  ? message.split('other :')[1]
-                  : message}
-            </Message>
+            message.startsWith('me :') || message.startsWith('other :') ? (
+              <AlignedMessage key={index} isOwnMessage={message.startsWith('me :')}>
+                <Message isOwnMessage={message.startsWith('me :')}>
+                  {message.startsWith('me :')
+                    ? message.split('me :')[1]
+                    : message.startsWith('other :')
+                      ? message.split('other :')[1]
+                      : message}
+                </Message>
+              </AlignedMessage>
+            ) : (
+              <CenteredMessage key={index}>
+                {message}
+              </CenteredMessage>
+            )
           ))}
         </MessageList>
       </ChatContainer>
@@ -89,7 +101,7 @@ const Header = styled.h2`
   `;
 
 const ChatContainer = styled.div`
-    background-color: rgba(133, 33, 12, 0.2);
+    background-color: rgb(186,206,224);
     width: 50vw;
     height: 500px;
     border-radius: 5px;
@@ -99,19 +111,34 @@ const ChatContainer = styled.div`
     min-width: 500px;
   `;
 
-const MessageList = styled.ul`
-    padding: 10px;
-    list-style: none;
-  `;
+  const AlignedMessage = styled.div<{ isOwnMessage?: boolean }>`
+  display: flex;
+  justify-content: ${({ isOwnMessage }) => (isOwnMessage ? 'flex-end' : 'flex-start')};
+`;
 
-const Message = styled.li<{ isLeftAligned?: boolean }>`
-    margin-bottom: 10px;
-    padding: 8px;
-    background-color: rgba(55, 12, 23, 0.1);
-    border-radius: 5px;
-    text-align: ${({ isLeftAligned }) => (isLeftAligned ? 'left' : 'right')};
+const MessageList = styled.div`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space- evenly;
   `;
-
+  const Message = styled.div<{ isOwnMessage?: boolean }>`
+  width:auto;
+  background-color: ${({ isOwnMessage }) => (isOwnMessage ? 'rgb(255,235,51)' : 'rgb(255, 255, 255)')};
+  margin: 10px 30px;
+  border-radius: 7.5px;
+  padding: 8px;
+  flex-wrap: column;
+`;
+const CenteredMessage = styled(Message)`
+  width:90%;
+  margin: auto;
+  margin-top:10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgba(55, 12, 23, 0.1);
+  border-radius: 5px;
+`;
 const ChatInputContainer = styled.div`
     display: flex;
     margin: auto;
@@ -121,8 +148,8 @@ const ChatInputContainer = styled.div`
   `;
 
 const UserNameInput = styled.input`
-    border: none;
-    background-color: rgba(55, 12, 23, 0.1);
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 7vw;
     min-width: 100px;
@@ -130,8 +157,8 @@ const UserNameInput = styled.input`
   `;
 
 const MessageInput = styled.input`
-    border: none;
-    background-color: rgba(55, 12, 23, 0.1);
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 35vw;
     height: 30px;
@@ -140,12 +167,13 @@ const MessageInput = styled.input`
   `;
 
 const SendButton = styled.button`
-    background-color: rgba(55, 12, 23, 0.2);
+    background-color: ${({ disabled }) => (disabled ? 'rgba(125, 125, 125, 0.25)' : 'rgb(255, 235, 51)')};
     margin-left: 5px;
     border: none;
     border-radius: 5px;
     width: 75px;
     height: 30px;
+    font-weight: ${({disabled }) => (disabled ? 100 : 'bold' )};
   `;
 
 

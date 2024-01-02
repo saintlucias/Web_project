@@ -20,20 +20,20 @@ wss.on('connection', (ws: WebSocket, req: http.IncomingMessage) => {
   const privateip = splitIP[3];
   console.log(`Client connected from IP address: ${privateip}`);
 
-  switch (privateip) {
-    case '192.168.0.23':
-      broadcastToAll('선택님이 입장 했읍니다.');
-      break;
-    case '192.168.0.18':
-      broadcastToAll('병석님이 입장 했읍니다.');
-      break;
-    case '192.168.0.31':
-      broadcastToAll('철민님이 입장 했읍니다.');
-      break;
-    default:
-      broadcastToAll(`${privateip}님이 입장 했읍니다.`);
-      break;
-  }
+  // switch (privateip) {
+  //   case '192.168.0.23':
+  //     broadcastToAll('선택님이 입장 했읍니다.');
+  //     break;
+  //   case '192.168.0.18':
+  //     broadcastToAll('병석님이 입장 했읍니다.');
+  //     break;
+  //   case '192.168.0.31':
+  //     broadcastToAll('철민님이 입장 했읍니다.');
+  //     break;
+  //   default:
+  //     broadcastToAll(`${privateip}님이 입장 했읍니다.`);
+  //     break;
+  // }
 
   ws.on('message', (message: string) => {
     wss.clients.forEach((client) => {
